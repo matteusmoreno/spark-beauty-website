@@ -172,7 +172,8 @@ h2 {
 
 /* Seção Sobre */
 .about-section {
-  background-color: var(--primary-color);
+  background-color: #fff;
+  /* Mudado para branco para melhor contraste com o rodapé */
 }
 
 .vision-mission {
@@ -203,6 +204,10 @@ h2 {
 }
 
 /* Seção de Promoções */
+.promo-section {
+  background-color: var(--primary-color);
+}
+
 .promo-rules {
   display: flex;
   justify-content: center;
@@ -229,36 +234,131 @@ h2 {
   font-style: italic;
 }
 
-/* Rodapé */
-.footer {
-  background-color: var(--text-color);
-  color: var(--white-color);
-  text-align: center;
-  padding: 3rem 5%;
+/* Rodapé Profissional */
+.footer-professional {
+  background-color: #2c2c2c;
+  /* Cor de fundo escura */
+  color: #a7a7a7;
+  /* Cor de texto suave */
+  padding: 4rem 5% 2rem;
+  font-size: 0.95rem;
 }
 
-.footer-container h3 {
-  font-size: 1.8rem;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #444;
+}
+
+.footer-about,
+.footer-contact,
+.footer-social {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  /* Títulos em branco para destaque */
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Linha decorativa abaixo dos títulos */
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--secondary-color);
+  /* Rosa da marca */
+}
+
+.footer-about p {
+  line-height: 1.7;
+}
+
+.contact-list,
+.footer-social .social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
-.footer a {
-  color: var(--white-color);
+.contact-list svg {
+  flex-shrink: 0;
+  color: var(--secondary-color);
+}
+
+.contact-list a {
+  color: #a7a7a7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #444;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.developer-credit {
+  margin-top: 0.5rem;
+}
+
+.developer-credit a {
+  color: var(--secondary-color);
+  font-weight: 500;
   text-decoration: none;
 }
 
-.contact-info,
-.social-media {
-  margin: 1rem 0;
-}
-
-.social-media span {
-  margin: 0 1rem;
-}
-
-.copyright {
-  margin-top: 2rem;
-  opacity: 0.7;
+.developer-credit a:hover {
+  text-decoration: underline;
 }
 
 /* Design Responsivo */
@@ -285,5 +385,23 @@ h2 {
 
   .hero-content h1 {
     font-size: 2.5rem;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contact-list li {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
   }
 }
