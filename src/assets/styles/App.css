@@ -94,51 +94,121 @@ body {
   display: none;
 }
 
-/* Seção Hero */
+/* --- SEÇÃO HERO (NOVO DESIGN) --- */
 .hero {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../images/hero-background.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  background: linear-gradient(135deg, #fff1f4 0%, #ffe4e9 100%);
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 5%;
-  margin-top: 0;
-  /* A navbar transparente fica sobre o hero */
+  padding: 80px 5% 0;
+  /* Adiciona padding superior para a navbar */
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+  max-width: 550px;
+  z-index: 2;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  color: var(--text-color);
+  font-size: 3.5rem;
+  /* Maior e mais impactante */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  margin: 1rem 0 2rem;
-  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2.5rem;
 }
 
 .cta-button {
   background-color: var(--secondary-color);
   color: var(--white-color);
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.8rem;
+  /* Botão maior */
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
   border: none;
-  box-shadow: 0 4px 15px rgba(255, 143, 171, 0.4);
+  box-shadow: 0 4px 20px rgba(255, 143, 171, 0.5);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .cta-button:hover {
   background-color: #ff6b95;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 143, 171, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(255, 143, 171, 0.6);
 }
 
-/* --- SEÇÕES GERAIS (TÍTULOS E SUBTÍTULOS) - REFORMULADO --- */
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 500px;
+  height: 500px;
+  /* Adiciona uma altura fixa para o container */
+}
+
+.hero-image-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--secondary-color), #ffc1d3);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morph 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* ALTERAÇÃO PRINCIPAL AQUI */
+.hero-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  /* A imagem terá 100% do tamanho do container */
+  height: 100%;
+  object-fit: cover;
+  /* Garante que a imagem cubra o espaço */
+  border-radius: 20px;
+  /* Cantos arredondados, não um círculo */
+  filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  50% {
+    border-radius: 50% 50% 30% 70% / 50% 70% 30% 50%;
+  }
+
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+
+/* Seções Gerais (Títulos e Subtítulos) */
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -146,19 +216,14 @@ body {
 
 .section-title {
   font-size: 2.8rem;
-  /* Ligeiramente maior */
   font-weight: 700;
   letter-spacing: 0.5px;
-  /* Espaçamento para um look mais refinado */
   margin-bottom: 1rem;
-  /* Aumenta o espaçamento para o subtítulo */
   position: relative;
   display: inline-block;
-  /* Necessário para o pseudo-elemento ::after */
   padding-bottom: 0.8rem;
 }
 
-/* Linha decorativa abaixo do título */
 .section-title::after {
   content: '';
   position: absolute;
@@ -174,13 +239,10 @@ body {
 .section-subtitle {
   font-size: 1.1rem;
   color: #6c757d;
-  /* Um cinzento mais suave */
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
-  /* Melhora a legibilidade */
 }
-
 
 /* --- SEÇÃO DE PRODUTOS REFORMULADA --- */
 .products-section-showcase {
@@ -596,6 +658,24 @@ body {
 /* --- DESIGN RESPONSIVO --- */
 
 @media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    padding-top: 5rem;
+  }
+
+  .hero-content {
+    order: 2;
+    text-align: center;
+  }
+
+  .hero-image-container {
+    order: 1;
+    height: auto;
+    /* Altura automática em telas menores */
+    max-width: 350px;
+  }
 
   .product-row,
   .product-row-reverse {
