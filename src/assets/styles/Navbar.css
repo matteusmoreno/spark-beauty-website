@@ -1,0 +1,155 @@
+/* --- NAVBAR --- */
+.navbar {
+    background-color: transparent;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover img {
+    transform: scale(1.05);
+}
+
+.nav-menu-desktop {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--secondary-color);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+}
+
+.nav-menu-mobile,
+.nav-toggle {
+    display: none;
+}
+
+/* Responsividade da Navbar */
+@media (max-width: 768px) {
+    .nav-menu-desktop {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .nav-toggle span {
+        height: 3px;
+        width: 100%;
+        background-color: var(--text-color);
+        border-radius: 10px;
+        transition: all 0.3s linear;
+        position: relative;
+        transform-origin: 1px;
+    }
+
+    .navbar.scrolled .nav-toggle span {
+        background-color: var(--text-color);
+    }
+
+    .navbar:not(.scrolled) .nav-toggle span {
+        background-color: var(--text-color);
+    }
+
+    .nav-toggle.open span {
+        background-color: var(--text-color);
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+        transform: rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    .nav-menu-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .nav-item-mobile {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .nav-item-mobile:hover {
+        color: var(--secondary-color);
+    }
+}

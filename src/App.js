@@ -1,5 +1,5 @@
 import React from 'react';
-import './assets/styles/App.css'; // Ajuste o caminho se for diferente
+// REMOVA a linha: import './assets/styles/App.css';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';

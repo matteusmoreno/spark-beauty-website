@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import '../assets/styles/About.css';
 
 // Ícones para Visão e Missão (SVG embutido para simplicidade)
 const VisionIcon = () => (

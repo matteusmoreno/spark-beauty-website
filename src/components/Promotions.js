@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import '../assets/styles/Promotions.css';
 
 // Ícones para as promoções
 const DiscountIcon = () => (

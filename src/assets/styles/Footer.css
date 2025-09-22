@@ -1,0 +1,142 @@
+/* --- RODAPÉ --- */
+.footer-professional {
+    background-color: #2c2c2c;
+    color: #a7a7a7;
+    padding: 4rem 5% 2rem;
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #444;
+}
+
+.footer-about,
+.footer-contact,
+.footer-social {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-heading {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.footer-about p {
+    line-height: 1.7;
+}
+
+.contact-list,
+.footer-social .social-icons {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.contact-list svg {
+    flex-shrink: 0;
+    color: var(--secondary-color);
+}
+
+.contact-list a {
+    color: #a7a7a7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #444;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.developer-credit {
+    margin-top: 0.5rem;
+}
+
+.developer-credit a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.developer-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade do Rodapé */
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}

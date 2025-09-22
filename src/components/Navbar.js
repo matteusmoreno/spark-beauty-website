@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-// ALTERAÇÃO: Voltando para o logo original
+import '../assets/styles/Navbar.css';
 import logo from '../assets/images/logo1.png';
 
 const Navbar = () => {

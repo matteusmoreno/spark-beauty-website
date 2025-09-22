@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// ALTERAÇÃO: Importando a nova imagem de textura
+import '../assets/styles/Hero.css';
 import heroProductImage from '../assets/images/hero-beauty-texture.png';
 
 const Hero = () => {

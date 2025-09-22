@@ -1,0 +1,210 @@
+/* --- SEÇÃO DE PRODUTOS --- */
+.products-section-showcase {
+    padding: 6rem 5%;
+    background-color: #fff;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.product-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.product-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.product-image-container {
+    flex: 1;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-showcase {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.product-image-showcase:hover {
+    transform: scale(1.03);
+}
+
+.product-details {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.product-category-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.product-description-showcase {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.shades-section {
+    margin-bottom: 2rem;
+}
+
+.shades-title {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.shades-list-showcase {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.shade-item-showcase {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.shade-item-showcase:focus-visible {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+
+.shade-item-showcase.active {
+    border-color: var(--secondary-color);
+}
+
+.shade-color-showcase {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.shade-item-showcase:hover .shade-color-showcase {
+    transform: scale(1.1);
+}
+
+.product-buy-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.product-price-showcase {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.buy-button-showcase {
+    background-color: var(--text-color);
+    color: var(--white-color);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.buy-button-showcase:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 143, 171, 0.4);
+}
+
+/* Responsividade dos Produtos */
+@media (max-width: 992px) {
+
+    .product-row,
+    .product-row-reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .product-details {
+        text-align: center;
+    }
+
+    .product-description-showcase {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .shades-list-showcase,
+    .product-buy-section {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-section-showcase {
+        padding: 4rem 5%;
+    }
+
+    .product-list {
+        gap: 4rem;
+    }
+
+    .product-title {
+        font-size: 1.8rem;
+    }
+
+    .product-price-showcase {
+        font-size: 1.5rem;
+    }
+
+    .buy-button-showcase {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+    }
+}

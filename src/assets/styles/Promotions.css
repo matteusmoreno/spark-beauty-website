@@ -1,0 +1,55 @@
+/* --- SEÇÃO DE PROMOÇÕES --- */
+.promo-section {
+    padding: 6rem 5%;
+    background-color: #fff;
+}
+
+.promo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.promo-card {
+    background-color: #fff;
+    border: 2px dashed var(--secondary-color);
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 143, 171, 0.2);
+}
+
+.promo-icon {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.promo-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.promo-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.promo-note {
+    margin-top: 3rem;
+    font-style: italic;
+    color: #777;
+    text-align: center;
+}

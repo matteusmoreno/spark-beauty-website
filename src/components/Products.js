@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import '../assets/styles/Products.css';
 
 // Imagens dos produtos
 import creamyTintImg from '../assets/images/product-placeholder.png';
