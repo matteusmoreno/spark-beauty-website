@@ -321,39 +321,75 @@ body {
 }
 
 
-/* Seção Sobre */
+/* --- SEÇÃO SOBRE (NOVO DESIGN) --- */
 .about-section {
-  padding: 4rem 5%;
-  text-align: center;
-  background-color: var(--primary-color);
+  padding: 6rem 5%;
+  background-color: #fdfafb;
+  /* Cor de fundo muito suave, quase branca */
+  overflow: hidden;
 }
 
-.vision-mission {
-  display: flex;
-  justify-content: center;
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  text-align: left;
-  margin-top: 2rem;
-  flex-wrap: wrap;
 }
 
-.vision,
-.mission {
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
+.about-card {
+  background-color: var(--white-color);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+  text-align: center;
 }
 
-.mission ul {
-  list-style: none;
-  padding-left: 0;
+.about-icon {
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
 }
 
-.mission li {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff8fab" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') no-repeat left center;
-  padding-left: 25px;
+.about-title {
+  font-size: 1.8rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.mission-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mission-list li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  display: flex;
+  align-items: flex-start;
+}
+
+.mission-list li::before {
+  content: '✓';
+  color: var(--secondary-color);
+  font-weight: bold;
+  margin-right: 1rem;
+  margin-top: 2px;
+}
+
 
 /* Seção de Promoções */
 .promo-section {
@@ -512,6 +548,7 @@ body {
 
 /* --- DESIGN RESPONSIVO --- */
 
+/* Tablet e dispositivos menores */
 @media (max-width: 992px) {
 
   .product-row,
@@ -536,6 +573,7 @@ body {
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .nav-menu-desktop {
     display: none;
@@ -568,7 +606,6 @@ body {
     background-color: var(--text-color);
   }
 
-  /* Cor do ícone do menu quando a navbar NÃO está rolada (transparente) */
   .navbar:not(.scrolled) .nav-toggle span {
     background-color: var(--text-color);
   }
@@ -641,6 +678,11 @@ body {
   .buy-button-showcase {
     padding: 0.8rem 2rem;
     font-size: 0.9rem;
+  }
+
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+    /* Muda para 1 coluna em telemóvel */
   }
 
   .footer-main {
