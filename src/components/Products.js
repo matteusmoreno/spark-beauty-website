@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
-// Importando Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -10,9 +8,7 @@ import 'swiper/css/pagination';
 
 import '../assets/styles/Products.css';
 
-// --- NOVAS IMAGENS IMPORTADAS ---
-
-// 2 in 1 Lip Colour Glossy
+// --- Imagens ---
 import lipGlossy1 from '../assets/images/products/2-in-1-lip-colour-glossy-1.jpg';
 import lipGlossy2 from '../assets/images/products/2-in-1-lip-colour-glossy-2.jpg';
 import lipGlossy3 from '../assets/images/products/2-in-1-lip-colour-glossy-3.jpg';
@@ -24,7 +20,6 @@ import lipGlossy8 from '../assets/images/products/2-in-1-lip-colour-glossy-8.jpg
 import lipGlossy9 from '../assets/images/products/2-in-1-lip-colour-glossy-9.jpg';
 import lipGlossy10 from '../assets/images/products/2-in-1-lip-colour-glossy-10.jpg';
 
-// Superstay Eyeliner
 import eyeliner1 from '../assets/images/products/superstay-eyeliner-1.jpg';
 import eyeliner2 from '../assets/images/products/superstay-eyeliner-2.jpg';
 import eyeliner3 from '../assets/images/products/superstay-eyeliner-3.jpg';
@@ -36,7 +31,6 @@ import eyeliner8 from '../assets/images/products/superstay-eyeliner-8.jpg';
 import eyeliner9 from '../assets/images/products/superstay-eyeliner-9.jpg';
 import eyeliner10 from '../assets/images/products/superstay-eyeliner-10.jpg';
 
-// Triple Act Creamy Tint
 import creamyTint1 from '../assets/images/products/triple-act -creamy-tint-1.jpg';
 import creamyTint2 from '../assets/images/products/triple-act -creamy-tint-2.jpg';
 import creamyTint3 from '../assets/images/products/triple-act -creamy-tint-3.jpg';
@@ -47,12 +41,10 @@ import creamyTint7 from '../assets/images/products/triple-act -creamy-tint-7.jpg
 import creamyTint8 from '../assets/images/products/triple-act -creamy-tint-8.jpg';
 import creamyTint9 from '../assets/images/products/triple-act -creamy-tint-9.jpg';
 
-// Sparkling Glow Cushion
 import cushion1 from '../assets/images/products/sparkling-glow-cushion-1.png';
 import cushion2 from '../assets/images/products/sparkling-glow-cushion-2.png';
 import cushion3 from '../assets/images/products/sparkling-glow-cushion-3.png';
 import cushion4 from '../assets/images/products/sparkling-glow-cushion-4.png';
-
 
 const allProducts = [
     {
@@ -86,6 +78,17 @@ const allProducts = [
         ]
     },
     {
+        category: "Mata",
+        name: "Superstay Eyeliner",
+        price: "Rp 48.000",
+        description: "Eyeliner presisi dengan warna hitam pekat yang tahan air, sempurna untuk menciptakan berbagai tampilan.",
+        images: [eyeliner1, eyeliner2, eyeliner3, eyeliner4, eyeliner5, eyeliner6, eyeliner7, eyeliner8, eyeliner9, eyeliner10],
+        link: "https://shopee.co.id/Superstay-Eyeliner-i.59797435.8114890320",
+        shades: [
+            { name: "Hitam", color: "#000000" }
+        ]
+    },
+    {
         category: "Wajah",
         name: "Sparkling Glow Cushion",
         price: "Rp 90.000",
@@ -97,23 +100,11 @@ const allProducts = [
             { name: "Ivory", color: "#FFFFF0" },
             { name: "Natural", color: "#DEB887" }
         ]
-    },
-    {
-        category: "Mata",
-        name: "Superstay Eyeliner",
-        price: "Rp 48.000",
-        description: "Eyeliner presisi dengan warna hitam pekat yang tahan air, sempurna untuk menciptakan berbagai tampilan.",
-        images: [eyeliner1, eyeliner2, eyeliner3, eyeliner4, eyeliner5, eyeliner6, eyeliner7, eyeliner8, eyeliner9, eyeliner10],
-        link: "https://shopee.co.id/Superstay-Eyeliner-i.59797435.8114890320",
-        shades: [
-            { name: "Hitam", color: "#000000" }
-        ]
     }
 ];
 
 const ProductRow = ({ product, index }) => {
     const [activeShade, setActiveShade] = useState(product.shades[0]);
-
     const isReversed = index % 2 !== 0;
 
     const variants = {
@@ -158,7 +149,6 @@ const ProductRow = ({ product, index }) => {
                                 key={shade.name}
                                 className={`shade-item-showcase ${activeShade.name === shade.name ? 'active' : ''}`}
                                 onClick={() => setActiveShade(shade)}
-                                onKeyPress={(e) => e.key === 'Enter' && setActiveShade(shade)}
                                 tabIndex={0}
                                 role="button"
                                 aria-label={`Select ${shade.name} shade`}
