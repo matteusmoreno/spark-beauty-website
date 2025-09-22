@@ -3,7 +3,7 @@
     padding: 6rem 5%;
     background-color: #fff;
     overflow-x: hidden;
-    /* CORREÇÃO: Impede o scroll horizontal */
+    /* Mantém a prevenção de scroll horizontal */
 }
 
 .product-list {
@@ -43,6 +43,7 @@
 .product-image-showcase {
     width: 100%;
     height: 450px;
+    /* Altura fixa para DESKTOP, que está a funcionar bem */
     object-fit: contain;
     display: block;
 }
@@ -186,7 +187,7 @@
 }
 
 
-/* Responsividade dos Produtos */
+/* --- Responsividade dos Produtos --- */
 @media (max-width: 992px) {
 
     .product-row,
@@ -213,16 +214,21 @@
 
 @media (max-width: 768px) {
     .products-section-showcase {
-        padding: 4rem 2.5%;
-        /* Reduz o padding lateral para dar mais espaço */
+        padding: 4rem 5%;
     }
 
     .product-list {
         gap: 4rem;
     }
 
+    /* --- CORREÇÃO PRINCIPAL AQUI --- */
     .product-image-showcase {
-        height: 350px;
+        height: auto;
+        /* Remove a altura fixa */
+        aspect-ratio: 4 / 3;
+        /* Cria uma proporção de 4:3, mais retangular */
+        object-fit: cover;
+        /* Faz a imagem preencher o espaço proporcional */
     }
 
     .product-title {
@@ -244,7 +250,8 @@
         font-size: 1.7rem;
     }
 
+    /* Para telemóveis, uma proporção quadrada pode ser mais agradável */
     .product-image-showcase {
-        height: 300px;
+        aspect-ratio: 1 / 1;
     }
 }
