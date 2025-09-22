@@ -48,11 +48,14 @@
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 3;
-    object-fit: contain; /* mostra a imagem inteira */
+    object-fit: contain;
+    /* mostra a imagem inteira */
     display: block;
     border-radius: 12px;
-    background-color: #fff; /* fundo neutro pra quando sobrar espaço */
-    padding: 10px; /* evita que a imagem encoste na borda */
+    background-color: #fff;
+    /* fundo neutro pra quando sobrar espaço */
+    padding: 10px;
+    /* evita que a imagem encoste na borda */
     box-sizing: border-box;
 }
 
@@ -219,5 +222,10 @@
     .buy-button-showcase {
         padding: 0.9rem 2.2rem;
         font-size: 0.9rem;
+    }
+
+    .shades-section {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 }
