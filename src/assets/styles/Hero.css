@@ -1,4 +1,4 @@
-/* --- SEÇÃO HERO --- */
+/* --- SEÇÃO HERO (NOVO DESIGN) --- */
 .hero {
     background: linear-gradient(135deg, #fff1f4 0%, #ffe4e9 100%);
     min-height: 100vh;
@@ -79,13 +79,18 @@
     z-index: 0;
 }
 
+/* --- ALTERAÇÕES PRINCIPAIS AQUI --- */
 .hero-image {
     position: relative;
     z-index: 1;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
+    /* 'contain' garante que a imagem inteira seja visível, 
+      sem cortar, mantendo a sua proporção.
+    */
+    object-fit: contain;
+    border-radius: 0;
+    /* Remove qualquer arredondamento */
     filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.15));
 }
 

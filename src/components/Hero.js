@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import '../assets/styles/Hero.css';
-import heroProductImage from '../assets/images/hero-beauty-texture.png';
+// ALTERAÇÃO: Usando a nova imagem que você enviou
+import heroProductImage from '../assets/images/hero-picture-2.png';
 
 const Hero = () => {
     const containerVariants = {
