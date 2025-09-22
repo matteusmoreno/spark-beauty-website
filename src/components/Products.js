@@ -1,12 +1,58 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+
+// Importando Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import '../assets/styles/Products.css';
 
-// Imagens dos produtos
-import creamyTintImg from '../assets/images/product-placeholder.png';
-import lipColourImg from '../assets/images/product-placeholder.png';
-import eyelinerImg from '../assets/images/product-placeholder.png';
-import cushionImg from '../assets/images/product-placeholder.png';
+// --- NOVAS IMAGENS IMPORTADAS ---
+
+// 2 in 1 Lip Colour Glossy
+import lipGlossy1 from '../assets/images/products/2-in-1-lip-colour-glossy-1.jpg';
+import lipGlossy2 from '../assets/images/products/2-in-1-lip-colour-glossy-2.jpg';
+import lipGlossy3 from '../assets/images/products/2-in-1-lip-colour-glossy-3.jpg';
+import lipGlossy4 from '../assets/images/products/2-in-1-lip-colour-glossy-4.jpg';
+import lipGlossy5 from '../assets/images/products/2-in-1-lip-colour-glossy-5.jpg';
+import lipGlossy6 from '../assets/images/products/2-in-1-lip-colour-glossy-6.jpg';
+import lipGlossy7 from '../assets/images/products/2-in-1-lip-colour-glossy-7.jpg';
+import lipGlossy8 from '../assets/images/products/2-in-1-lip-colour-glossy-8.jpg';
+import lipGlossy9 from '../assets/images/products/2-in-1-lip-colour-glossy-9.jpg';
+import lipGlossy10 from '../assets/images/products/2-in-1-lip-colour-glossy-10.jpg';
+
+// Superstay Eyeliner
+import eyeliner1 from '../assets/images/products/superstay-eyeliner-1.jpg';
+import eyeliner2 from '../assets/images/products/superstay-eyeliner-2.jpg';
+import eyeliner3 from '../assets/images/products/superstay-eyeliner-3.jpg';
+import eyeliner4 from '../assets/images/products/superstay-eyeliner-4.jpg';
+import eyeliner5 from '../assets/images/products/superstay-eyeliner-5.jpg';
+import eyeliner6 from '../assets/images/products/superstay-eyeliner-6.jpg';
+import eyeliner7 from '../assets/images/products/superstay-eyeliner-7.jpg';
+import eyeliner8 from '../assets/images/products/superstay-eyeliner-8.jpg';
+import eyeliner9 from '../assets/images/products/superstay-eyeliner-9.jpg';
+import eyeliner10 from '../assets/images/products/superstay-eyeliner-10.jpg';
+
+// Triple Act Creamy Tint
+import creamyTint1 from '../assets/images/products/triple-act -creamy-tint-1.jpg';
+import creamyTint2 from '../assets/images/products/triple-act -creamy-tint-2.jpg';
+import creamyTint3 from '../assets/images/products/triple-act -creamy-tint-3.jpg';
+import creamyTint4 from '../assets/images/products/triple-act -creamy-tint-4.jpg';
+import creamyTint5 from '../assets/images/products/triple-act -creamy-tint-5.jpg';
+import creamyTint6 from '../assets/images/products/triple-act -creamy-tint-6.jpg';
+import creamyTint7 from '../assets/images/products/triple-act -creamy-tint-7.jpg';
+import creamyTint8 from '../assets/images/products/triple-act -creamy-tint-8.jpg';
+import creamyTint9 from '../assets/images/products/triple-act -creamy-tint-9.jpg';
+
+// Sparkling Glow Cushion
+import cushion1 from '../assets/images/products/sparkling-glow-cushion-1.png';
+import cushion2 from '../assets/images/products/sparkling-glow-cushion-2.png';
+import cushion3 from '../assets/images/products/sparkling-glow-cushion-3.png';
+import cushion4 from '../assets/images/products/sparkling-glow-cushion-4.png';
+
 
 const allProducts = [
     {
@@ -14,7 +60,7 @@ const allProducts = [
         name: "Triple Act Creamy Tint",
         price: "Rp 65.000",
         description: "Tint bibir creamy dengan hasil akhir matte yang tahan lama, memberikan warna intens yang menyatu sempurna.",
-        image: creamyTintImg,
+        images: [creamyTint1, creamyTint2, creamyTint3, creamyTint4, creamyTint5, creamyTint6, creamyTint7, creamyTint8, creamyTint9],
         link: "https://shopee.co.id/Triple-Action-Creamy-Tint-i.59797435.23482725263",
         shades: [
             { name: "Peppy", color: "#E57373" },
@@ -27,7 +73,7 @@ const allProducts = [
         name: "2 in 1 Lip Colour Glossy",
         price: "Rp 110.000",
         description: "Dua fungsi dalam satu. Dapatkan warna bibir yang intens dan hasil akhir glossy yang memukau dalam satu produk.",
-        image: lipColourImg,
+        images: [lipGlossy1, lipGlossy2, lipGlossy3, lipGlossy4, lipGlossy5, lipGlossy6, lipGlossy7, lipGlossy8, lipGlossy9, lipGlossy10],
         link: "https://shopee.co.id/2-in-1-Lip-Colour-Glossy-i.59797435.26054354717",
         shades: [
             { name: "Lea", color: "#EF5350" },
@@ -44,7 +90,7 @@ const allProducts = [
         name: "Sparkling Glow Cushion",
         price: "Rp 90.000",
         description: "Cushion ringan yang memberikan hasil akhir kilau sehat alami pada wajah Anda sepanjang hari.",
-        image: cushionImg,
+        images: [cushion1, cushion2, cushion3, cushion4],
         link: "https://shopee.co.id/Sparkling-Cushion-i.59797435.25539584751",
         shades: [
             { name: "Beige", color: "#F5DEB3" },
@@ -57,7 +103,7 @@ const allProducts = [
         name: "Superstay Eyeliner",
         price: "Rp 48.000",
         description: "Eyeliner presisi dengan warna hitam pekat yang tahan air, sempurna untuk menciptakan berbagai tampilan.",
-        image: eyelinerImg,
+        images: [eyeliner1, eyeliner2, eyeliner3, eyeliner4, eyeliner5, eyeliner6, eyeliner7, eyeliner8, eyeliner9, eyeliner10],
         link: "https://shopee.co.id/Superstay-Eyeliner-i.59797435.8114890320",
         shades: [
             { name: "Hitam", color: "#000000" }
@@ -84,7 +130,21 @@ const ProductRow = ({ product, index }) => {
             viewport={{ once: true, amount: 0.3 }}
         >
             <div className="product-image-container">
-                <img src={product.image} alt={product.name} className="product-image-showcase" />
+                <Swiper
+                    modules={[Navigation, Pagination]}
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    navigation
+                    loop={true}
+                    pagination={{ clickable: true }}
+                    className="product-swiper"
+                >
+                    {product.images.map((image, i) => (
+                        <SwiperSlide key={i}>
+                            <img src={image} alt={`${product.name} - Imagem ${i + 1}`} className="product-image-showcase" />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
             <div className="product-details">
                 <p className="product-category-tag">{product.category}</p>
