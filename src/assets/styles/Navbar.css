@@ -17,9 +17,16 @@
 .nav-container {
     display: flex;
     justify-content: space-between;
+    /* logo esquerda / menu direita */
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+}
+
+.nav-logo {
+    flex-shrink: 0;
+    /* impede que o logo seja comprimido */
 }
 
 .nav-logo img {
@@ -34,6 +41,8 @@
 .nav-menu-desktop {
     display: flex;
     gap: 2.5rem;
+    margin-left: auto;
+    /* empurra o menu pra direita */
 }
 
 .nav-item {
@@ -167,7 +176,6 @@
         display: flex;
         gap: 2.5rem;
         margin-top: 3rem;
-        /* Espaço entre os links e os ícones */
     }
 
     .mobile-socials a {
