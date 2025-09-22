@@ -98,7 +98,6 @@
 .social-icons {
     display: flex;
     gap: 1.25rem;
-    /* Aumenta o espaçamento entre os ícones */
 }
 
 .social-icons a {
@@ -106,19 +105,16 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    /* Cor inicial do ícone */
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icons a:hover {
     color: var(--secondary-color);
-    /* Muda a cor do ícone no hover */
     transform: translateY(-3px);
 }
 
 .social-icons svg {
     font-size: 28px;
-    /* Tamanho dos ícones */
 }
 
 .footer-bottom {
@@ -141,23 +137,27 @@
     text-decoration: underline;
 }
 
-/* Responsividade do Rodapé */
+/* --- Responsividade do Rodapé --- */
 @media (max-width: 768px) {
     .footer-main {
         grid-template-columns: 1fr;
-        text-align: center;
+        /* ALTERAÇÃO: Alinhamento à esquerda para mobile */
+        text-align: left;
     }
 
     .footer-heading::after {
-        left: 50%;
-        transform: translateX(-50%);
+        /* ALTERAÇÃO: Alinha o sublinhado à esquerda */
+        left: 0;
+        transform: translateX(0);
     }
 
     .contact-list li {
-        justify-content: center;
+        /* ALTERAÇÃO: Alinha os itens da lista à esquerda */
+        justify-content: flex-start;
     }
 
     .social-icons {
-        justify-content: center;
+        /* ALTERAÇÃO: Alinha os ícones à esquerda */
+        justify-content: flex-start;
     }
 }
